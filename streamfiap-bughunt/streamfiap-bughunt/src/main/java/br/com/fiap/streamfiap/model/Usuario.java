@@ -26,12 +26,12 @@ public class Usuario {
     }
 
     public boolean temCreditosSuficientes(double preco) {
-        return preco >= this.creditos;
+        return this.creditos >= preco;
     }
 
     public void debitarCreditos(double valor) {
         // adiciona o valor aos créditos do usuário
-        this.creditos = this.creditos - valor;
+        this.creditos = Math.round((this.creditos - valor) * 100.0) / 100.0;
     }
 
     public Usuario alugar(Conteudo c) throws ClassificacaoIndicativaException {
