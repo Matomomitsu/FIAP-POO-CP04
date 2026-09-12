@@ -31,7 +31,6 @@ public class Usuario {
     }
 
     public void debitarCreditos(double valor) {
-        // adiciona o valor aos créditos do usuário
         this.creditos = Math.round((this.creditos - valor) * 100.0) / 100.0;
     }
 
