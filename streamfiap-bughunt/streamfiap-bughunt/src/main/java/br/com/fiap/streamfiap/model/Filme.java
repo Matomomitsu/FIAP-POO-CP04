@@ -22,7 +22,7 @@ public class Filme extends Conteudo implements Promocionavel {
 
     @Override
     public double aplicarPromocao(double preco) {
-        return preco * 1.2;
+        return Math.round(preco * 0.8 * 100.0) / 100.0;
     }
 
     public boolean isEstreia() { return estreia; }
