@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 @Entity
 public class Serie extends Conteudo implements Promocionavel {
 
+    private static final double PRECO_POR_TEMPORADA = 4.90;
+
     private int numeroTemporadas;
 
     public Serie() {
@@ -20,13 +22,13 @@ public class Serie extends Conteudo implements Promocionavel {
     // preço da série: 4.90 por temporada
     @Override
     public double calcularPrecoAluguel() {
-        double preco = 4.90 * numeroTemporadas;
+        double preco = PRECO_POR_TEMPORADA * numeroTemporadas;
         return Math.round(preco * 100.0) / 100.0;
     }
 
     @Override
     public double aplicarPromocao(double preco) {
-        return Math.round(preco * 0.8 * 100.0) / 100.0;
+        return Math.round(preco * FATOR_DESCONTO * 100.0) / 100.0;
     }
 
     public int getNumeroTemporadas() { return numeroTemporadas; }
