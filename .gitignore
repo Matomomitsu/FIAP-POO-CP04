@@ -1,6 +1,8 @@
 target/
 !.mvn/wrapper/maven-wrapper.properties
 
+application.properties
+
 ### Eclipse ###
 .classpath
 .project
