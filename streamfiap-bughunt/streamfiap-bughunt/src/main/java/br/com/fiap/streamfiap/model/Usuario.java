@@ -35,7 +35,7 @@ public class Usuario {
         this.creditos = Math.round((this.creditos - valor) * 100.0) / 100.0;
     }
 
-    public Usuario alugar(Conteudo c) throws ClassificacaoIndicativaException {
+    public Usuario alugar(Conteudo c) {
         if (!c.isDisponivel()) {
             throw new ConteudoIndisponivelException(c.getTitulo() + " nao esta disponivel para aluguel");
         }
